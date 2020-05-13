@@ -1,0 +1,46 @@
+{
+  "name": "luastore",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "config": {
+    "nuxt": {
+      "host": "localhost",
+      "port": "3000"
+    }
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "nstart": "nuxt start",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.9.7",
+    "@nuxtjs/recaptcha": "^0.6.2",
+    "@nuxtjs/toast": "^3.3.0",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.17.1",
+    "firebase": "^7.14.1",
+    "js-cookie": "^2.2.1",
+    "mongodb": "^3.5.6",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "nuxt": "^2.0.0",
+    "nuxt-session": "^1.0.3",
+    "sequelize": "^5.21.6",
+    "strtotime": "^1.0.0",
+    "vue-server-renderer": "^2.6.11",
+    "vue-sweetalert2": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
