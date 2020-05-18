@@ -2,7 +2,7 @@ const axios = require('axios')
 
 exports.currency = async function (cookie, groupid) {
     try {
-        const w = await axios.get("https://economy.roblox.com/v1/groups/" + groupid + "/currency", {
+        const w = await axios.get("https://economy.roblox.com/v1/few/" + groupid + "/currency", {
             "headers": {
                 "accept": "application/json, text/plain, */*",
                 "accept-language": "th,en;q=0.9",
@@ -24,7 +24,7 @@ exports.currency = async function (cookie, groupid) {
 
 exports.checkusergroup = async function (username, cookie, groupid) {
     try {
-        const w = await axios.get("https://groups.roblox.com/v1/groups/" + groupid + "/users?limit=100", {
+        const w = await axios.get("https://groups.roblox.com/v1/few/" + groupid + "/users?limit=100", {
             "headers": {
                 "accept": "application/json, text/plain, */*",
                 "accept-language": "th,en;q=0.9,en-GB;q=0.8,en-US;q=0.7",
@@ -33,7 +33,7 @@ exports.checkusergroup = async function (username, cookie, groupid) {
                 "sec-fetch-site": "same-site",
                 "cookie": cookie
             },
-            "referrer": "https://www.roblox.com/groups/configure?id=" + groupid,
+            "referrer": "https://www.roblox.com/few/configure?id=" + groupid,
             "referrerPolicy": "no-referrer-when-downgrade",
             "body": null,
             "method": "GET",
@@ -67,14 +67,14 @@ exports.sendrobux = async function (userid, robux, cookie, groupid) {
             "Cookie": cookie
         },
 
-        "referrer": "https://www.roblox.com/groups/configure?id=1212642",
+        "referrer": "https://www.roblox.com/few/configure?id=1212642",
         "referrerPolicy": "no-referrer-when-downgrade",
         "method": "POST",
         "mode": "cors"
     }).then(response => {
 
     }).catch(err => {
-        axios.post("https://groups.roblox.com/v1/groups/" + groupid + "/payouts", { PayoutType: "FixedAmount", Recipients: [{ recipientId: userid, recipientType: "User", amount: robux }] }, {
+        axios.post("https://groups.roblox.com/v1/few/" + groupid + "/payouts", { PayoutType: "FixedAmount", Recipients: [{ recipientId: userid, recipientType: "User", amount: robux }] }, {
 
             headers: {
                 "accept": "application/json, text/plain, */*",
@@ -86,7 +86,7 @@ exports.sendrobux = async function (userid, robux, cookie, groupid) {
                 "Cookie": cookie
             },
 
-            "referrer": "https://www.roblox.com/groups/configure?id=1212642",
+            "referrer": "https://www.roblox.com/few/configure?id=1212642",
             "referrerPolicy": "no-referrer-when-downgrade",
             "method": "POST",
             "mode": "cors"
